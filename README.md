@@ -34,4 +34,39 @@
 
 * `generate_fake_data.py`: 模擬受試者原始填答行為，產出具備題項級數據的 CSV 檔。
 * `analysis.py`: 核心分析程式，執行統計檢定並產出圖表與 LaTeX 代碼。
-* `data_wide.csv`: 寬格式數據，
+* `data_wide.csv`: 寬格式數據，包含 34 題動機與 10 題負荷之原始整數得分。
+* `plots/`: 自動存放各研究變項的前後測交互作用趨勢圖。
+* `descriptive_stats.tex`: 自動生成的描述性統計與 ANCOVA 結果表格。
+
+## ⚙️ 使用說明 (Usage)
+
+### 1. 環境設置
+建議使用 Python 3.8+ 版本，並安裝相關依賴套件：
+```bash
+pip install pandas numpy plotly statsmodels kaleido openpyxl
+
+# 生成原始填答數據
+python generate_fake_data.py
+
+# 執行統計分析並產出圖表
+python analysis.py
+
+## ⚙️ 執行流程 (Execution Flow)
+
+請依照以下順序執行腳本，以確保數據生成與分析邏輯的一致性：
+
+```bash
+# 1. 生成原始填答數據 (包含 34 題動機量表與 10 題認知負荷量表)
+python generate_fake_data.py
+
+# 2. 執行統計分析、產出交互作用圖並生成 LaTeX 表格代碼
+python analysis.py
+
+## 📜 預期結果 (Expected Findings)
+
+根據目前的模擬數據與初步分析結果，本研究預期之實驗成效如下：
+
+* **動機賦能 (Motivation Enhancement)**：實驗組高中生在接受「生成式 AI 結合 6E 教學法」後，其學習動機後測得分預期將顯著優於對照組（$p < .001$）。
+* **負荷優化 (Cognitive Load Optimization)**：生成式 AI 預期能作為有效的學習鷹架，顯著降低學生在複雜任務中的「外在認知負荷」(EL)，同時提升有助於基模建構的「增生認知負荷」(GL)。
+* **心理需求滿足 (Psychological Needs)**：透過 AI 的及時反饋，學生在自我決定理論 (SDT) 中的「勝任感」與「自主感」維度預期將展現出較高的成長趨勢。
+* **教學效能轉化**：相較於傳統教學，結合 AI 的 6E 教學模式更能觸發學生的探究動機，並在實作環節（Engineer & Enrich）展現更高的學習投入度。
