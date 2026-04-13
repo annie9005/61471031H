@@ -1,1 +1,6 @@
-# 61471031H
+應用生成式 AI 結合 6E 教學模式與自我決定理論對高中生 STEM 學習之影響研究本儲存庫包含專為碩士論文設計的實驗數據生成模型、統計分析腳本及預期結果可視化工具。本研究旨在探討生成式 AI 介入教學對高中生在 STEM 學習動機與認知負荷之影響。📝 專案概述 (Project Overview)本研究採用準實驗設計（Quasi-experimental Design），結合以下理論框架：教學模式：6E 教學法 (Engage, Explore, Explain, Engineer, Enrich, Evaluate)。心理理論：自我決定理論 (Self-Determination Theory, SDT)。核心工具：生成式 AI (Generative AI) 作為學習支架。本專案模擬了 $N=106$ 名受試者的實驗數據，分為實驗組（Experimental Group, $n=53$）與控制組（Control Group, $n=53$）。📊 研究工具與維度 (Instruments)本研究採用兩套標準化量表進行前後測評量：量表名稱題數維度內容計分方式學習動機量表34內在動機、勝任感、自主感、關係感等Likert 5 點認知負荷量表10內在負荷 (IL)、外在負荷 (EL)、增生負荷 (GL)0-10 分🚀 技術架構 (Technical Stack)參考學姊的分析流程，本專案整合了以下技術：數據生成：NumPy 與 Pandas 用於模擬具備學術邏輯的實驗數據。統計分析：使用 statsmodels 進行 線性混合模型 (MixedLM) 與 共變數分析 (ANCOVA)。可視化：使用 Plotly 生成交互式趨勢圖，並自動導出為 PNG 格式供 LaTeX 引用。論文整合：自動產出符合 booktabs 規範的 LaTeX 統計表格代碼。📦 檔案結構 (Repository Structure)generate_fake_data.py: 模擬受試者填答行為，產出原始數據 CSV。analysis.py: 執行統計檢定、計算 $F$ 值、$p$ 值與效果量 ($\eta^2$)。data_wide.csv: 包含 44 個原始題項的寬格式數據。plots/: 存放各變項前後測交互作用圖。descriptive_stats.tex: 自動生成的 LaTeX 論文表格代碼。⚙️ 使用說明 (Usage)建立虛擬環境：Bashpython -m venv .venv
+source .venv/bin/activate  # Windows: .\.venv\Scripts\activate
+pip install pandas numpy plotly statsmodels kaleido openpyxl
+生成數據與分析：Bashpython generate_fake_data.py
+python analysis.py
+📜 預期結果 (Expected Findings)根據目前的模擬數據，本研究預期：動機提升：實驗組在後測的勝任感與自主感得分顯著優於控制組 ($p < .001$)。負荷優化：AI 介入能有效降低外在認知負荷 (EL)，並提升有助於學習的增生認知負荷 (GL)。
