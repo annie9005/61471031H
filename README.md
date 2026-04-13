@@ -9,7 +9,7 @@
 本研究採用準實驗設計（Quasi-experimental Design），探討生成式 AI 在高中生活科技課程中的應用成效。研究整合以下理論框架：
 * **教學模式**：6E 教學法 (Engage, Explore, Explain, Engineer, Enrich, Evaluate)。
 * **心理理論**：自我決定理論 (Self-Determination Theory, SDT)。
-* **核心工具**：生成式 AI (Generative AI) 作為學習支架，協助學生進行實作與問題解決。
+* **核心工具**：引導式策略型教學AI代理人作為學習鷹架，協助學生進行實作與問題解決。
 
 本專案模擬了 **$N=106$** 名受試者的實驗數據，分為實驗組（Experimental Group, $n=53$）與控制組（Control Group, $n=53$）。
 
